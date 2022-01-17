@@ -10,8 +10,9 @@ class ShortController extends Controller
     //
 
     public function show(Request $request, Short $short){
-        $short->number_of_visitors +=1;
-        $short->save();
+        
+        $short->increment('number_of_visitors');
+        
         return redirect()->to($short->url);
     }
 

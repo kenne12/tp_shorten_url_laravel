@@ -26,7 +26,7 @@ class Short extends Model
 
     public static function getByShortCode($short_code)
     {
-      return  self::where('short_code', $short_code)->get();
+      return  self::where('short_code', $short_code)->firstOrFail();
     }
 
 }
